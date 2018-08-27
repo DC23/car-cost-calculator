@@ -3,4 +3,5 @@ jupyter
 matplotlib
 numpy
 pandas
+plotly
 pytest
