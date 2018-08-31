@@ -13,7 +13,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
-    name='car_cost_calculator',
+    name='car-cost-calculator',
     version='0.1.0',
     description='Total cost of ownership calculator for cars',
     long_description=LONG_DESCRIPTION,

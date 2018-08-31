@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 'Compound interest tests'
+
 import numpy as np
 import car_cost_calculator as ccc
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 'Standing costs class'
 
 from .compound_interest import compound_interest

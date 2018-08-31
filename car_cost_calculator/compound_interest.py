@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 'Compound interest function'
 import numpy as np
 
