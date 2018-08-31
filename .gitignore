@@ -1,3 +1,19 @@
-Advanced Notebook Features.ipynb
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+# Build artifacts and directories
+tags
+build/
+dist/
+*.egg-info/
+.coverage
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# PyCharm Project files contain local settings, and so are not appropriate for Git
+.project
+.idea/
+*.dat
 .pytest_cache/
