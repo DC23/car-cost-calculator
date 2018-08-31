@@ -5,18 +5,18 @@ import numpy as np
 
 
 class TwoStageRate():
-    '''Depreciation function with a 2-stage rate.
+    '''Depreciation rate function with a 2-stage rate.
 
        Defaults to 15% for first 3 years, then 10% after that.
     '''
 
     def __init__(self,
                  stage_1_rate: float = 0.15,
-                 breakpoint: int = 3,
-                 stage_2_rate: float = 0.10):
+                 stage_2_rate: float = 0.10,
+                 breakpoint: int = 3):
         self.__stage_1_rate = stage_1_rate
-        self.__breakpoint = breakpoint
         self.__stage_2_rate = stage_2_rate
+        self.__breakpoint = breakpoint
 
     def __call__(self, year):
         if year < self.__breakpoint:
@@ -25,7 +25,7 @@ class TwoStageRate():
 
 
 class FlatRate():
-    '''Flat-rate depreciation function object'''
+    '''Flat-rate depreciation rate function object'''
 
     def __init__(self, rate: float = 0.1):
         self.__rate = rate
@@ -48,7 +48,7 @@ def calculate(initial_value: float,
             rate (callable): Function accepting a single int that
                 returns the depreciation rate to use for the given age in years.
         Returns:
-            dep_value: numpy array containing the depreciated value for each year.
+            dep_value: numpy array containing the depreciated value at the start of each year.
             yearly_loss: numpy array containing the depreciation loss for
                 each year, defined as the difference in value between the
                 start and end of the year.
