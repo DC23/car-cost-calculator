@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
-'Compound interest tests'
+# pylint: disable=C0103, C0111
 
-import numpy as np
-import car_cost_calculator as ccc
+from numpy.testing import assert_allclose
+from car_cost_calculator.compound_interest import compound_interest
+
 
 def test_compound_interest_num_results():
-    assert len(ccc.compound_interest(8000, 0.073, 10, 1)) == 10
+    assert len(compound_interest(8000, 0.073, 10, 1)) == 10
+
 
 def test_compound_interest():
-    actual = ccc.compound_interest(8000, 0.073, 5, 1)
+    actual = compound_interest(8000, 0.073, 5, 1)
     expected = [8000.0, 8584.0, 9210.632, 9883.008, 10604.468]
-    np.testing.assert_allclose(actual, expected, verbose=True)
-    
+    assert_allclose(actual, expected, verbose=True)

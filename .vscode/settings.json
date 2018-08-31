@@ -10,7 +10,8 @@
     ],
     "python.linting.ignorePatterns": [
         ".vscode/*.py",
-        "**/site-packages/**/*.py",
-        "**/tests/**/*.py"
-    ]
+        "**/site-packages/**/*.py"
+        //,"**/tests/**/*.py"
+    ],
+    "python.jediEnabled": false
 }
