@@ -28,6 +28,11 @@ setup(
 
     install_requires=[
         'future',
+        'jupyter',
+        'matplotlib',
+        'numpy',
+        'pandas',
+        'plotly',
     ],
 
     extras_require={
@@ -44,7 +49,4 @@ setup(
             'pytest-sugar',
         ],
     },
-
-    package_data={},
-    data_files=[],
 )
