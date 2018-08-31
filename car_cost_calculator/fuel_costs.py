@@ -41,6 +41,5 @@ def yearly_fuel_cost(km_per_year, litres_per_100km: float, years: int,
     indexed_fuel_cost_per_litre = compound_interest(
         principal=initial_fuel_price,
         annual_rate=inflation,
-        years=years,
-        compounds_per_year=1)
+        years=years)
     return indexed_fuel_cost_per_litre * fuel_used_per_year
