@@ -1,5 +1,5 @@
 SHELL=/bin/sh
-PACKAGE_NAME=car-cost-calculator
+PACKAGE_NAME=car_cost_calculator
 
 .SILENT:
 .IGNORE:
@@ -63,7 +63,7 @@ sdist:
 .PHONY: bdist_wheel
 bdist_wheel:
 	python setup.py bdist_wheel
-	
+
 # Upload package to PyPI. You must edit this if you only require specific package types.
 .PHONY: upload
 upload: clean

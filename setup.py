@@ -24,7 +24,6 @@ setup(
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     platforms='any',
-    test_suite='tests.test_car_cost_calculator',
 
     install_requires=[
         'future',

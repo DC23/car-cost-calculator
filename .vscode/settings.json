@@ -1,6 +1,6 @@
 {
     "python.unitTest.pyTestArgs": [
-        "car-cost-calculator"
+        "car_cost_calculator"
     ],
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
