@@ -12,4 +12,4 @@ def test_compound_interest_num_results():
 def test_compound_interest():
     actual = compound_interest(8000, 0.073, 5, 1)
     expected = [8000.0, 8584.0, 9210.632, 9883.008, 10604.468]
-    assert_allclose(actual, expected, verbose=True)
+    assert_allclose(actual, expected)
