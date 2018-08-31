@@ -1,0 +1,9 @@
+{
+    "python.unitTest.pyTestArgs": [
+        "car-cost-calculator"
+    ],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.pyTestEnabled": true,
+    "python.formatting.provider": "yapf"
+}
