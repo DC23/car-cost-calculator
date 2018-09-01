@@ -5,6 +5,7 @@
     "python.formatting.provider": "yapf",
     "python.pythonPath": "/home/daniel/.virtualenvs/car-cost-calculator-efeurYw1/bin/python",
     "python.unitTest.pyTestArgs": [
+        "car_cost_calculator/tests"
     ],
     "python.linting.ignorePatterns": [
         ".vscode/*.py",
