@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+matplotlib = "*"
+numpy = "*"
+pandas = "*"
+plotly = "*"
+
+[dev-packages]
+bumpversion = "*"
+ipytest = "*"
+pylint = "*"
+pytest = "*"
+pytest-sugar = "*"
+yapf = "*"
+
+[requires]
+python_version = "3.6"
