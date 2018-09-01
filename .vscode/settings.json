@@ -3,9 +3,9 @@
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.pyTestEnabled": true,
     "python.formatting.provider": "yapf",
-    "python.pythonPath": "/home/daniel/.virtualenvs/ccc/bin/python",
+    "python.pythonPath": "/home/daniel/.virtualenvs/car-cost-calculator-efeurYw1/bin/python",
     "python.unitTest.pyTestArgs": [
-        "car_cost_calculator",
+        "car_cost_calculator/tests",
         "--quiet"
     ],
     "python.linting.ignorePatterns": [
