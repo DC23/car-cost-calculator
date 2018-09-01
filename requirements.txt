@@ -1,7 +1,12 @@
+bumpversion
 ipytest
 jupyter
 matplotlib
 numpy
 pandas
 plotly
+pylint
 pytest
+pytest-sugar
+wheel
+yapf
