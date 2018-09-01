@@ -5,7 +5,7 @@ from .compound_interest import compound_interest
 
 
 class StandingCosts():
-    '''Represents the static costs, which are not dependent on distance travelled'''
+    '''Represents static yearly costs which are not dependent on distance travelled'''
 
     def __init__(self,
                  years: int = 1,
@@ -17,15 +17,12 @@ class StandingCosts():
         self.insurance_per_year = compound_interest(
             principal=insurance_per_year,
             annual_rate=inflation,
-            years=years,
-            compounds_per_year=1)
+            years=years)
         self.registration_per_year = compound_interest(
             principal=registration_per_year,
             annual_rate=inflation,
-            years=years,
-            compounds_per_year=1)
+            years=years)
         self.roadside_assist_per_year = compound_interest(
             principal=roadside_assist_per_year,
             annual_rate=inflation,
-            years=years,
-            compounds_per_year=1)
+            years=years)
