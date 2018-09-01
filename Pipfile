@@ -9,6 +9,10 @@ matplotlib = "*"
 numpy = "*"
 pandas = "*"
 plotly = "*"
+dash = "*"
+dash-renderer = "*"
+dash-html-components = "*"
+dash-core-components = "*"
 
 [dev-packages]
 bumpversion = "*"
