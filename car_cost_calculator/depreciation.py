@@ -56,15 +56,13 @@ def calculate(initial_value: float,
 
     dep_value = np.zeros(years)
     yearly_loss = np.zeros(years)
-    dep_value[0] = initial_value
     previous = initial_value
-    for year in range(1, years):
-        this_years_rate = rate(initial_age + year - 1)
-        previous *= (1.0 - this_years_rate)
-        dep_value[year] = previous
-
     for year in range(years):
-        this_years_rate = rate(initial_age + year)
-        yearly_loss[year] = this_years_rate * dep_value[year]
+        # value at start of the year
+        dep_value[year] = previous
+        # depreciation loss for the year
+        yearly_loss[year] = previous * rate(initial_age + year)
+        # subtract the loss to get value at start of next year
+        previous -= yearly_loss[year]
 
     return dep_value, yearly_loss
