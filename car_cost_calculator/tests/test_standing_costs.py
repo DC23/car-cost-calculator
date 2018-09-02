@@ -24,6 +24,7 @@ def test_standing_costs_1_year():
     assert_allclose(100, actual.insurance_per_year)
     assert_allclose(200, actual.registration_per_year)
     assert_allclose(150, actual.roadside_assist_per_year)
+    assert_allclose(120, actual.detailing_per_year)
 
 
 def test_standing_costs_insurance_3_years():

@@ -4,7 +4,6 @@
 from .compound_interest import compound_interest
 
 
-# TODO: add wash/detailing
 class StandingCosts():
     '''Represents static yearly costs which are not dependent on distance travelled'''
 
@@ -13,15 +12,22 @@ class StandingCosts():
                  inflation: float = 0.02,
                  insurance_per_year=500,
                  registration_per_year=500,
-                 roadside_assist_per_year=200):
+                 roadside_assist_per_year=200,
+                 detailing_per_year=120):
         '''Initialise the standing costs object'''
         self.insurance_per_year = compound_interest(
-            principal=insurance_per_year, annual_rate=inflation, years=years)
+            principal=insurance_per_year,
+            annual_rate=inflation,
+            years=years)
         self.registration_per_year = compound_interest(
             principal=registration_per_year,
             annual_rate=inflation,
             years=years)
         self.roadside_assist_per_year = compound_interest(
             principal=roadside_assist_per_year,
+            annual_rate=inflation,
+            years=years)
+        self.detailing_per_year = compound_interest(
+            principal=detailing_per_year,
             annual_rate=inflation,
             years=years)
