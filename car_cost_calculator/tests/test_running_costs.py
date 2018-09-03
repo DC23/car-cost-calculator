@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103, C0111
 
-# import numpy as np
 from numpy.testing import assert_allclose
-from car_cost_calculator.depreciation import FlatRate
+from car_cost_calculator.depreciation import FlatRate, TwoStageRate
 from car_cost_calculator.running_costs import RunningCosts
 
 
@@ -116,3 +115,27 @@ def test_service_schedule_18_monthly_limit():
         service_interval_years=1.5)
     expected = [0, 1, 1, 0, 1]
     assert_allclose(actual.service_cost, expected, atol=0.001)
+
+
+def test_total_cost():
+    actual = RunningCosts(
+        initial_vehicle_value=50000,
+        initial_vehicle_age=0,
+        depreciation_rate=TwoStageRate(
+            stage_1_rate=0.15, stage_2_rate=0.1, breakpoint=3),
+        years=10,
+        km_per_year=15000,
+        litres_per_100km=16.0,
+        inflation=0.02,
+        initial_fuel_price=1.50,
+        initial_service_cost=300,
+        service_interval_km=15000,
+        service_interval_years=1,
+        tyre_replacement_interval=40000,
+        initial_cost_per_tyre=300)
+
+    expected = [
+        11400.0, 10353.0, 10724.79, 7209.336, 6985.048, 8118.018,
+        6630.519, 7872.934, 6382.645, 6292.717
+    ]
+    assert_allclose(actual.total_cost, expected, atol=0.001)

@@ -137,3 +137,8 @@ class RunningCosts():
             except IndexError:
                 continue
         return yearly_cost
+
+    @property
+    def total_cost(self):
+        '''Gets the total yearly spend'''
+        return self.depreciation_loss + self.fuel_cost + self.tyre_cost + self.service_cost
