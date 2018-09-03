@@ -8,7 +8,22 @@ from .fuel_costs import yearly_fuel_cost
 
 
 class RunningCosts():
-    '''Represents yearly running costs that depend on distance travelled'''
+    '''Represents yearly running costs that depend on distance travelled.
+
+    Attributes:
+        years (int): number of years calculated.
+        km_per_year (float): km driven per year.
+        litres_per_100km (float): fuel consumption.
+        inflation (float): Assumed inflation rate used for price indexing.
+        cumulative_distance (array-like): Array giving the accumulated distance driven each year.
+        depreciated_value (array-like): Array giving the depreciated value at the start of each year.
+        depreciation_loss (array-like): The depreciation loss for each year.
+        fuel_cost (array-like): Yearly fuel spend, based on distance driven, fuel consumption and indexed fuel cost.
+        tyre_cost (array-like): Yearly spend on replacement tyres.
+        service_cost (array-like): Yearly spend on servicing
+        indexed_cost_per_tyre (array-like): Indexed cost of replacement tyres.
+        indexed_service_cost (array-like): Indexed cost of servicing for each year.
+    '''
 
     def __init__(self,
                  initial_vehicle_value: float = 40000,
@@ -24,6 +39,24 @@ class RunningCosts():
                  service_interval_years: float = 1.0,
                  tyre_replacement_interval: float = 15000,
                  initial_cost_per_tyre: float = 300):
+        ''' Initialisation of the `RunningCosts` class.
+        Args:
+            initial_vehicle_value (float): Vehicle value at start of first year.
+            initial_vehicle_age (int): Age of vehicle at start of first modelling year.
+            depreciation_rate (callable): Function returning the depreciation rate for a given year.
+            years (int): number of years to model.
+            km_per_year (float): km driven per year.
+            litres_per_100km (float): fuel consumption.
+            inflation (float): Assumed inflation rate used for price indexing.
+            initial_fuel_price (float): Price per litre of fuel in the first year. Indexed by inflation.
+            initial_service_cost (float): Price per service at start of modelling period. Indexed by inflation.
+            service_interval_km (float): Max distance between services.
+            service_interval_years (float): Max time in years between services.
+            tyre_replacement_interval (float): Interval in km between tyre replacements.
+            initial_cost_per_tyre (float): Indexed replacement cost of a tyre at start of modelling period.
+        '''
+        assert inflation >= 0
+        assert inflation <= 1.0
 
         self.years = years
         self.km_per_year = km_per_year

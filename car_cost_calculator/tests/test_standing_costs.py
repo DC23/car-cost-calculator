@@ -9,9 +9,9 @@ from car_cost_calculator.standing_costs import StandingCosts
 def test_len_matches_years():
     years = 6
     sc = StandingCosts(years=years)
-    assert len(sc.insurance_per_year) == years
-    assert len(sc.registration_per_year) == years
-    assert len(sc.roadside_assist_per_year) == years
+    assert len(sc.insurance_cost) == years
+    assert len(sc.registration_cost) == years
+    assert len(sc.roadside_assist_cost) == years
 
 
 def test_standing_costs_1_year():
@@ -21,10 +21,10 @@ def test_standing_costs_1_year():
         insurance_per_year=100,
         registration_per_year=200,
         roadside_assist_per_year=150)
-    assert_allclose(100, actual.insurance_per_year)
-    assert_allclose(200, actual.registration_per_year)
-    assert_allclose(150, actual.roadside_assist_per_year)
-    assert_allclose(120, actual.detailing_per_year)
+    assert_allclose(100, actual.insurance_cost)
+    assert_allclose(200, actual.registration_cost)
+    assert_allclose(150, actual.roadside_assist_cost)
+    assert_allclose(120, actual.detailing_cost)
 
 
 def test_standing_costs_insurance_3_years():
@@ -35,7 +35,7 @@ def test_standing_costs_insurance_3_years():
         registration_per_year=200,
         roadside_assist_per_year=150)
     expected = np.array([100.0, 102., 104.04])
-    assert_allclose(expected, actual.insurance_per_year)
+    assert_allclose(expected, actual.insurance_cost)
 
 
 def test_standing_costs_rego_10_years():
@@ -50,4 +50,4 @@ def test_standing_costs_rego_10_years():
         541.216, 552.040, 563.081,
         574.343, 585.830, 597.546
     ])
-    assert_allclose(expected, actual.registration_per_year, atol=0.001)
+    assert_allclose(expected, actual.registration_cost, atol=0.001)
