@@ -53,16 +53,14 @@ class RunningCosts():
             years=years)
 
         self.tyre_cost = self.__calc_distance_interval_costs(
-            tyre_replacement_interval,
-            self.indexed_cost_per_tyre,
+            tyre_replacement_interval, self.indexed_cost_per_tyre,
             self.cumulative_distance)
 
         self.indexed_service_cost = compound_interest(
             principal=initial_service_cost, annual_rate=inflation, years=years)
 
-        self.service_cost = self.__calc_service_cost(
-            service_interval_km,
-            service_interval_years)
+        self.service_cost = self.__calc_service_cost(service_interval_km,
+                                                     service_interval_years)
 
     def __calc_service_cost(self, service_interval_km, service_interval_years):
         '''Calculate cost of services that are based on both a distance and time interval'''
@@ -71,16 +69,14 @@ class RunningCosts():
         # then the service interval is calculated in the same manner as tyre replacements
         if service_interval_km <= self.km_per_year * service_interval_years:
             return self.__calc_distance_interval_costs(
-                service_interval_km,
-                self.indexed_service_cost,
+                service_interval_km, self.indexed_service_cost,
                 self.cumulative_distance)
 
         # interservice distance is more than service interval time,
         # so we hit the time-based service interval instead
         return self.__calc_distance_interval_costs(
-                service_interval_years,
-                self.indexed_service_cost,
-                np.linspace(service_interval_years, service_interval_years * self.years, num=self.years/service_interval_years))
+            service_interval_years, self.indexed_service_cost,
+            np.array(range(1, self.years + 1)))
 
     def __calc_distance_interval_costs(self, replacement_interval,
                                        yearly_indexed_cost,
@@ -93,9 +89,7 @@ class RunningCosts():
 
         # Indicies of the year in which each replacement will fall, based on the cumulative yearly distance
         replacement_indicies = np.digitize(
-            x=replacement_milestones,
-            bins=cumulative_distance,
-            right=True)
+            x=replacement_milestones, bins=cumulative_distance, right=True)
 
         # unique year indicices and the count of replacement events in that year
         unique_replacement_years, replacement_counts = np.unique(
@@ -104,5 +98,9 @@ class RunningCosts():
         # finally, the total yearly cost
         yearly_cost = np.zeros(self.years)
         for count_idx, year_idx in enumerate(unique_replacement_years):
-            yearly_cost[year_idx] = replacement_counts[count_idx] * yearly_indexed_cost[year_idx]
+            try:
+                yearly_cost[
+                    year_idx] = replacement_counts[count_idx] * yearly_indexed_cost[year_idx]
+            except IndexError:
+                continue
         return yearly_cost

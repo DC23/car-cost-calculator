@@ -89,17 +89,18 @@ def test_service_schedule_km_more_than_yearly():
         service_interval_km=12000.0,
         service_interval_years=1.0)
     # 1 service expected each year
-    expected = [1, 1.01, 1.0201, 1.030301, 1.040604]
-    assert_allclose(actual.service_cost, expected)
+    expected = [1, 1.01, 1.020, 1.030, 1.040]
+    assert_allclose(actual.service_cost, expected, atol=0.001)
+
 
 def test_service_schedule_6_monthly_limit():
     actual = RunningCosts(
         years=5,
-        inflation=0.0,
+        inflation=0.025,
         km_per_year=10000.0,
         initial_service_cost=1,
         service_interval_km=12500.0,
         service_interval_years=0.5)
     # 2 services expected each year
-    expected = [2] * 5
-    assert_allclose(actual.service_cost, expected)
+    expected = [2.0, 2.05, 2.101, 2.154, 2.208]
+    assert_allclose(actual.service_cost, expected, atol=0.001)
