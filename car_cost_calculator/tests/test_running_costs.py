@@ -104,3 +104,15 @@ def test_service_schedule_6_monthly_limit():
     # 2 services expected each year
     expected = [2.0, 2.05, 2.101, 2.154, 2.208]
     assert_allclose(actual.service_cost, expected, atol=0.001)
+
+
+def test_service_schedule_18_monthly_limit():
+    actual = RunningCosts(
+        years=5,
+        inflation=0.0,
+        km_per_year=10000.0,
+        initial_service_cost=1,
+        service_interval_km=20000.0,
+        service_interval_years=1.5)
+    expected = [0, 1, 1, 0, 1]
+    assert_allclose(actual.service_cost, expected, atol=0.001)
