@@ -7,6 +7,10 @@
     "python.unitTest.pyTestArgs": [
         "car_cost_calculator/tests"
     ],
+    "python.linting.pylintArgs": [
+        "--max-line-length=120",
+        "--max-attributes=12"
+    ],
     "python.linting.ignorePatterns": [
         ".vscode/*.py",
         "**/site-packages/**/*.py"
