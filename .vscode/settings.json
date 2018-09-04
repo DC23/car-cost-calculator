@@ -16,5 +16,6 @@
         "**/site-packages/**/*.py"
         //,"**/tests/**/*.py"
     ],
-    "python.jediEnabled": true
+    "python.jediEnabled": true,
+    "gitlens.codeLens.enabled": false
 }
