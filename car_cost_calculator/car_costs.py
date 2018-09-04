@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 'Car cost of ownership class'
 
-import numpy as np
+# import numpy as np
 import pandas as pd
 from .depreciation import FlatRate
 from .running_costs import RunningCosts
@@ -57,4 +57,18 @@ class CarCosts():
     @property
     def yearly_costs(self):
         '''Gets all yearly costs as a pandas `Dataframe`'''
-        pass
+        return pd.DataFrame({
+            'insurance': self.standing_costs.insurance_cost,
+            'registration': self.standing_costs.registration_cost,
+            'roadside_assist': self.standing_costs.roadside_assist_cost,
+            'detailing': self.standing_costs.detailing_cost,
+            'depreciation': self.running_costs.depreciation_loss,
+            'fuel': self.running_costs.fuel_cost,
+            'tyres': self.running_costs.tyre_cost,
+            'service': self.running_costs.service_cost,
+        })
+
+        # cumulative_distance (array-like): Array giving the accumulated distance driven each year.
+        # depreciated_value (array-like): Array giving the depreciated value at the start of each year.
+        # indexed_cost_per_tyre (array-like): Indexed cost of replacement tyres.
+        # indexed_service_cost (array-like): Indexed cost of servicing for each year.
