@@ -54,10 +54,7 @@ class CarCosts():
             roadside_assist_per_year=roadside_assist_per_year,
             detailing_per_year=detailing_per_year)
 
-    @property
-    def yearly_costs(self):
-        '''Gets all yearly costs as a pandas `Dataframe`'''
-        return pd.DataFrame({
+        self.yearly_costs = pd.DataFrame({
             'insurance': self.standing_costs.insurance_cost,
             'registration': self.standing_costs.registration_cost,
             'roadside_assist': self.standing_costs.roadside_assist_cost,
