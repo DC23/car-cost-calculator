@@ -1,6 +1,6 @@
 # Car Cost Calculator
 
-* Version: 0.5.0
+* Version: 0.5.1
 
 An attempt at a total cost of ownership calculator, simply because I plan to get a new car and typically overthink the whole thing.
 
