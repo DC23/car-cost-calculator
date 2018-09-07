@@ -20,7 +20,7 @@ setup(
     url='https://github.com/DC23/car-cost-calculator',
     author='DC23',
     author_email='jugglindan@gmail.com',
-    license='BSD',
+    license='MIT',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     platforms='any',
