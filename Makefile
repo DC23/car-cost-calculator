@@ -28,6 +28,8 @@ test:
 clean:
 	echo Cleaning ...
 	rm -rf build/
+	rm -rf .ipynb_checkpoints/
+	rm -rf .pytest_cache/
 	find ./$(PACKAGE_NAME)/ -name "__pycache__" -exec rm -rf {} \;
 	find ./$(PACKAGE_NAME)/ -name "*.pyc" -exec rm -rf {} \;
 	echo ... done
