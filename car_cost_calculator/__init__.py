@@ -6,4 +6,4 @@
 
 __author__ = 'DC23'
 __email__ = 'jugglindan@gmail.com'
-__version__ = '0.1.0'
+__version__ = '0.5.0'
