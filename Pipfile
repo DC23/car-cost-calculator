@@ -4,15 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-jupyter = "*"
-matplotlib = "*"
 numpy = "*"
 pandas = "*"
-plotly = "*"
 
 [dev-packages]
 bumpversion = "*"
-ipytest = "*"
 pylint = "*"
 pytest = "*"
 pytest-sugar = "*"
