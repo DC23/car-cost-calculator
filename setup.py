@@ -14,7 +14,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='car-cost-calculator',
-    version='0.5.1',
+    version='0.6.0',
     description='Total cost of ownership calculator for cars',
     long_description=LONG_DESCRIPTION,
     url='https://github.com/DC23/car-cost-calculator',
