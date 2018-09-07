@@ -1,5 +1,7 @@
 # Car Cost Calculator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 * Version: 0.5.1
 
 An attempt at a total cost of ownership calculator, simply because I plan to get a new car and typically overthink the whole thing.
