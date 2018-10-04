@@ -65,6 +65,8 @@ class CarCosts():
             'service': self.running_costs.service_cost,
         })
 
+        self.depreciated_value = self.running_costs.depreciated_value
+
         # cumulative_distance (array-like): Array giving the accumulated distance driven each year.
         # depreciated_value (array-like): Array giving the depreciated value at the start of each year.
         # indexed_cost_per_tyre (array-like): Indexed cost of replacement tyres.
