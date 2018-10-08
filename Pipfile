@@ -9,6 +9,7 @@ pandas = "*"
 
 [dev-packages]
 bumpversion = "*"
+notebook = "*"
 pylint = "*"
 pytest = "*"
 pytest-sugar = "*"
