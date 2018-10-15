@@ -7,6 +7,17 @@
 
 An attempt at a total cost of ownership calculator, simply because I plan to get a new car and typically overthink the whole thing.
 
+## Notebook
+
+To run the included notebook, install the dev dependencies. They are not
+included in the main dependencies as they are not strictly required for running
+the package code.
+
+```bash
+pipenv install --dev
+pipenv run jupyter notebook
+```
+
 ## References
 
 ### Depreciation

@@ -13,8 +13,10 @@ notebook = "*"
 pylint = "*"
 pytest = "*"
 pytest-sugar = "*"
-yapf = "*"
-black = "*"
+matplotlib = "*"
+plotly = "*"
+ipywidgets = "*"
+car-cost-calculator = {path = "."}
 
 [requires]
 python_version = "3.6"
