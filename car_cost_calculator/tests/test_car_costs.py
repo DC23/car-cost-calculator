@@ -11,7 +11,8 @@ def test_yearly_costs():
         initial_vehicle_value=50000,
         initial_vehicle_age=0,
         depreciation_rate=TwoStageRate(
-            stage_1_rate=0.15, stage_2_rate=0.1, breakpoint=3),
+            stage_1_rate=0.15, stage_2_rate=0.1, breakpoint=3
+        ),
         years=10,
         km_per_year=15000,
         litres_per_100km=9.0,
@@ -25,7 +26,8 @@ def test_yearly_costs():
         insurance_per_year=800,
         registration_per_year=500,
         roadside_assist_per_year=120,
-        detailing_per_year=15 * 12)
+        detailing_per_year=15 * 12,
+    )
 
     yc = car_costs.yearly_costs
     assert approx(yc.insurance[0], abs=0.001) == 800.000

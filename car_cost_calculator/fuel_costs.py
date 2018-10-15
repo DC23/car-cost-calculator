@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-'fuel cost functions'
+"fuel cost functions"
 # pylint: disable=R0903
 from .compound_interest import compound_interest
 
 
 def fuel_used(distance_km: float, litres_per_100km: float):
-    '''
+    """
     Calculates the amount of fuel used for a given number of kilometers and fuel efficiency.
 
     Args:
@@ -14,13 +14,18 @@ def fuel_used(distance_km: float, litres_per_100km: float):
 
     Returns:
         float: quantity of fuel used.
-    '''
+    """
     return distance_km * litres_per_100km / 100.0
 
 
-def yearly_fuel_cost(km_per_year, litres_per_100km: float, years: int,
-                     inflation: float, initial_fuel_price: float):
-    '''
+def yearly_fuel_cost(
+    km_per_year,
+    litres_per_100km: float,
+    years: int,
+    inflation: float,
+    initial_fuel_price: float,
+):
+    """
     Calculates the yearly indexed fuel cost based on an inflation rate,
     initial fuel cost, and number of km driven per year.
 
@@ -33,13 +38,12 @@ def yearly_fuel_cost(km_per_year, litres_per_100km: float, years: int,
 
     Returns:
         numpy.array: Yearly total fuel cost.
-    '''
+    """
     assert inflation >= 0
     assert inflation <= 1.0
 
     fuel_used_per_year = fuel_used(km_per_year, litres_per_100km)
     indexed_fuel_cost_per_litre = compound_interest(
-        principal=initial_fuel_price,
-        annual_rate=inflation,
-        years=years)
+        principal=initial_fuel_price, annual_rate=inflation, years=years
+    )
     return indexed_fuel_cost_per_litre * fuel_used_per_year

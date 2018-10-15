@@ -4,9 +4,9 @@
     Total cost of ownership calculator for cars
 """
 
-__author__ = 'DC23'
-__email__ = 'jugglindan@gmail.com'
-__version__ = '0.6.1'
+__author__ = "DC23"
+__email__ = "jugglindan@gmail.com"
+__version__ = "0.6.1"
 
 from .car_costs import CarCosts
 from .compound_interest import compound_interest
