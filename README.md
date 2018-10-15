@@ -15,7 +15,7 @@ the package code.
 
 ```bash
 pipenv install --dev
-pipenv run jupyter notebook
+pipenv run jupyter notebook ./notebook/comparer.ipynb
 ```
 
 ## References
