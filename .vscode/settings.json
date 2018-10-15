@@ -2,7 +2,7 @@
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.pyTestEnabled": true,
-    "python.formatting.provider": "yapf",
+    "python.formatting.provider": "black",
     "python.pythonPath": "/home/daniel/.virtualenvs/car-cost-calculator-efeurYw1/bin/python",
     "python.unitTest.pyTestArgs": [
         "car_cost_calculator/tests"
