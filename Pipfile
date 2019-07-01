@@ -9,14 +9,12 @@ pandas = "*"
 
 [dev-packages]
 bumpversion = "*"
-notebook = "*"
+jupyter = "*"
+matplotlib = "*"
+plotly = "*"
 pylint = "*"
 pytest = "*"
 pytest-sugar = "*"
-matplotlib = "*"
-plotly = "*"
-ipywidgets = "*"
-car-cost-calculator = {path = "."}
 
 [requires]
 python_version = "3.6"
